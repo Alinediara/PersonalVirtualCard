@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
@@ -10,7 +11,7 @@
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
-  --switch-bg-url: url(./assets/sun.svg);
+  --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light {
@@ -20,11 +21,11 @@
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url(./assets/moon-stars.svg);
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
 body {
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
 }
 
@@ -37,12 +38,10 @@ body * {
   width: 100%;
   max-width: 588px;
   margin: 56px auto 0px;
-  height: 650px;
-  margin-top: 60px;
-
   padding: 0 24px;
 }
 
+/* profile */
 #profile {
   text-align: center;
   padding: 24px;
@@ -51,13 +50,13 @@ body * {
 #profile img {
   width: 112px;
 }
+
 #profile p {
   font-weight: 500;
-  font-size: 16px;
   line-height: 24px;
   margin-top: 8px;
 }
-/* links */
+
 /* switch */
 #switch {
   position: relative;
@@ -102,42 +101,49 @@ body * {
 }
 
 /* links */
-
 ul {
   list-style: none;
+
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  padding: 24px 0;
 }
 
 ul li a {
-  padding: 24px 0;
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 62px;
+
   padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
   border-radius: 8px;
-  backdrop-filter: blur (4px);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
   text-decoration: none;
   font-weight: 500;
-  transition: backgroud 0.5s;
-}
-/* pseudo- selector*/
-ul li a::hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid white;
+
+  transition: background 0.2s;
 }
 
-/* social-links */
+/* pseudo-selector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social links */
 #social-links {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  padding: 24px;
+
+  padding: 24px 0;
+
   font-size: 24px;
 }
 
